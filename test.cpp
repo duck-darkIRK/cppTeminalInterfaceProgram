@@ -30,8 +30,8 @@ int main() {
                     "3.3.2. sum\n"
                     "3.3.3. all\n"
                     "4. quit\n",
-    [&status](){ // database push reference to [...]
-        switch (Program::process()) {
+    [&status](int process){ // database push reference to [...]
+        switch (process) {
             case 11:
             case 12:
             case 13: {

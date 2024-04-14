@@ -363,7 +363,7 @@ namespace Program {
     }
 
 
-    void start(string script, function<void()> action) {
+    void start(string script, function<void(int)> action) {
         Script actionScript(script);
         Interface mainProgram(actionScript);
         InputArgument input(mainProgram);
@@ -372,7 +372,7 @@ namespace Program {
         do {
             mainProgram.display();
             if (actionScript.isEndWay(mainProgram.getDirectory())) {
-                action();
+                action(mainProgram.getDirectory());
             } else {
                 input.inputPath();
             }
